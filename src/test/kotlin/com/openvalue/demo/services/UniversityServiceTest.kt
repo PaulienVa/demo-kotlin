@@ -4,6 +4,10 @@ import com.openvalue.demo.EXPECTED_UNI
 import com.openvalue.demo.TestData
 import com.openvalue.demo.api.University
 import com.openvalue.demo.repositories.UniversityRepository
+import com.openvalue.demo.utils.EXPECTED_UNI
+import com.openvalue.demo.utils.`when`
+import com.openvalue.demo.utils.given
+import com.openvalue.demo.utils.then
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -28,27 +32,5 @@ class UniversityServiceTest {
             this contains EXPECTED_UNI
         }
 
-    }
-}
-
-fun <R> given(block: (TestData) -> R): R {
-    return block(TestData())
-}
-
-inline fun <T,  R> T.`when`(block: T.() -> List<R>) : ListResult<R> {
-    return ListResult(block(this))
-}
-
-inline fun <T, R> T.then(block: T.() -> R) : R {
-    return block(this)
-}
-
-data class ListResult<T>(val list: List<T>) {
-    infix fun hasSize(size: Int) {
-        assertTrue(list.size ==  1)
-    }
-
-    infix fun contains(expected: T) {
-        assertTrue(list.contains(expected))
     }
 }

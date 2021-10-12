@@ -1,4 +1,4 @@
-package com.openvalue.demo
+package com.openvalue.demo.utils
 
 import com.openvalue.demo.api.University
 import com.openvalue.demo.repositories.dao.UniversityDao
