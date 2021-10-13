@@ -1,7 +1,5 @@
 package com.openvalue.demo.utils
 
-import com.openvalue.demo.TestData
-import com.openvalue.demo.services.ListResult
 
 fun <R> given(block: (TestData) -> R): R {
     return block(TestData())
